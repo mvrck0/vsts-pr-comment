@@ -18,7 +18,6 @@ token = process.env.AZURE_DEVOPS_PERSONAL_ACCESS_TOKEN
 ```yaml
 steps:
 - bash: |
-    cat 
     echo "my comment from ci" | npx vsts-pr-comment
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
