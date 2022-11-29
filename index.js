@@ -11,6 +11,13 @@ let tagValue = process.argv[4] ?? ''
 const main = async () => {
   let vsts = new VstsPrComment()
 
+  console.log(`
+    org_url: ${process.env.SYSTEM_COLLECTIONURI}
+    project: ${process.env.SYSTEM_TEAMPROJECT}
+    repository ${process.env.BUILD_REPOSITORY_NAME}
+    pr: ${process.env.SYSTEM_PULLREQUEST_PULLREQUESTID}
+  `)
+
   // Get previous thread if any.
   let existingThread = await vsts.getTaggedThread(tagValue)
   let newThread = {
@@ -30,6 +37,7 @@ const main = async () => {
   // Create a new thread and top-level comment
   if( (behaviour == "update" && !existingThread)){
     vsts.createThread(newThread)
+    console.log('Comment added')
   }
 
   // Update existing threads
@@ -37,12 +45,13 @@ const main = async () => {
     await vsts.updateThread(existingThread.id, {
       status: threadStatus
     })
-    console.log(existingThread.comments.map( c => ({ id: c.id, date: c.publishedDate })))
 
-    console.log(await vsts.updateComment(existingThread.id, {
+    await vsts.updateComment(existingThread.id, {
       id: 1,
-      content: data
-    }))
+      content: data,
+      isDeleted: false
+    })
+    console.log('Comment updated')
   }
 }
 
