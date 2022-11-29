@@ -19,7 +19,7 @@ token = process.env.AZURE_DEVOPS_PERSONAL_ACCESS_TOKEN
 steps:
 - bash: |
     cat 
-    npx run mvrck0/vsts-pr-comment
+    echo "my comment from ci" | npx vsts-pr-comment
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
 ```

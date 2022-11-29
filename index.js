@@ -35,13 +35,14 @@ const main = async () => {
   // Update existing threads
   if(behaviour == "update" && existingThread){
     await vsts.updateThread(existingThread.id, {
-      status: threadStatus,
+      status: threadStatus
     })
+    console.log(existingThread.comments.map( c => ({ id: c.id, date: c.publishedDate })))
 
-    await vsts.updateComment(existingThread.id, {
-      id: existingThread.comments.length, // zero is always the first comment on a thread
+    console.log(await vsts.updateComment(existingThread.id, {
+      id: 1,
       content: data
-    })
+    }))
   }
 }
 

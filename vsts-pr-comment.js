@@ -60,7 +60,7 @@ module.exports = class VstsPrComment {
 
   async updateComment(threadId, comment){
     let url = `${this.prPath}/threads/${threadId}/comments/${comment.id}`
-    return await this.request(url, 'POST', comment)
+    return await this.request(url, 'PATCH', comment)
   }
 
   async createThread(thread) {
