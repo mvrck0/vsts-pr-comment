@@ -1,0 +1,30 @@
+Terraform plan details
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  <span style="color:#0A0">+</span> create
+  <span style="color:#0AA"><=</span> read (data resources)
+
+Terraform will perform the following actions:
+
+<b># data.azurerm_subnet.snet-mysubnet</b> will be read during apply
+# (depends on a resource or a module with changes pending)
+  <span style="color:#0AA"><=</span> data "azurerm_subnet" "snet-mysubnet" {
+  <span style="color:#0A0">+</span> <b></b>address_prefix                                 = (known after apply)
+  <span style="color:#0A0">+</span> <b></b>address_prefixes                               = (known after apply)
+  <span style="color:#0A0">+</span> <b></b>enforce_private_link_endpoint_network_policies = (known after apply)
+  <span style="color:#0A0">+</span> <b></b>enforce_private_link_service_network_policies  = (known after apply)
+  <span style="color:#0A0">+</span> <b></b>id                                             = (known after apply)
+  <span style="color:#0A0">+</span> <b></b>name                                           = "snet-mysubnet"
+  <span style="color:#0A0">+</span> <b></b>network_security_group_id                      = (known after apply)
+  <span style="color:#0A0">+</span> <b></b>private_endpoint_network_policies_enabled      = (known after apply)
+  <span style="color:#0A0">+</span> <b></b>private_link_service_network_policies_enabled  = (known after apply)
+  <span style="color:#0A0">+</span> <b></b>resource_group_name                            = "rg-networking"
+  <span style="color:#0A0">+</span> <b></b>route_table_id                                 = (known after apply)
+  <span style="color:#0A0">+</span> <b></b>service_endpoints                              = (known after apply)
+  <span style="color:#0A0">+</span> <b></b>virtual_network_name                           = "vnet-1235"
+
+  <span style="color:#0A0">+</span> <b></b>timeouts {
+ <span style="color:#0A0">+</span> <b></b>read = (known after apply)
+    }
+  }
