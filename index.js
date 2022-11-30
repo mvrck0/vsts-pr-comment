@@ -47,11 +47,11 @@ const main = async () => {
     })
 
     await vsts.updateComment(existingThread.id, {
-      id: 3,
+      id: existingThread.comments[0].id,
       content: data,
       isDeleted: false,
-
     })
+    
     console.log('Comment updated')
   }
 }
