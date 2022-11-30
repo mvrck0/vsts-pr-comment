@@ -69,28 +69,3 @@ process.openStdin()
   data += chunk
 })
 .on('end', main)
-
-
-
-
-
-
-
-// let vsts = new VstsPrComment()
-
-// let threads = await vsts.getThreads()
-
-// let thread = threads.pop()
-// console.log(thread)
-
-// let newThread = vsts.makeThread()
-// newThread.comments[0].content = "!Test Content!.."
-// // /315
-
-
-// let taggedThread = await vsts.getTaggedThread('bar','foo')
-
-// console.log('taggedThread', taggedThread)
-
-// // let nt = await vsts.request('git/repositories/allegro-configuration/pullRequests/52/threads', 'POST', newThread)
-// // console.log(nt)
