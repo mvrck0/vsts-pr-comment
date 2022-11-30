@@ -141,7 +141,7 @@ module.exports = class VstsPrComment {
 
             // Everything else than 200, 201 and 202 is unexpected and will be treated as an error
             if ([200, 201, 202].indexOf(response.statusCode) < 0) {
-              reject(new Error(`Error: ${response.statusCode} - ${response.statusMessage}\n ${data}`))
+              reject(new Error(`${response.statusCode} - ${response.statusMessage}\n ${data}`))
             }
 
             // Resolve json-data

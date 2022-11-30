@@ -46,6 +46,8 @@ const main = async () => {
       status: threadStatus
     })
 
+    console.log('existingThread', existingThread)
+
     await vsts.updateComment(existingThread.id, {
       id: existingThread.comments[0].id,
       content: data,
